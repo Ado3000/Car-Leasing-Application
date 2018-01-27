@@ -1,11 +1,15 @@
 package com.ado.leasing.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.ado.leasing.dao.CarDAOInterface;
+import com.ado.leasing.dao.RegisteredCarsDAOInterface;
 import com.ado.leasing.entities.Car;
+import com.ado.leasing.entities.RegisteredCars;
 
 @Service
 public class CarService implements CarServiceInterface {
@@ -13,6 +17,8 @@ public class CarService implements CarServiceInterface {
 	@Autowired
 	private CarDAOInterface carDAO;
 
+	@Autowired
+	private RegisteredCarsDAOInterface registeredCarDAO;
 
 	@Override
 	@Transactional
@@ -37,5 +43,10 @@ public class CarService implements CarServiceInterface {
 	public void deleteCar(String reg) {
 		carDAO.deleteCar(reg);
 	}
-
+	
+	@Override
+	@Transactional
+	public void leaseCar(RegisteredCars registeredCar){
+		registeredCarDAO.leaseCar(registeredCar);
+	}
 }

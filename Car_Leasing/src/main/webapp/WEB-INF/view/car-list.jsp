@@ -33,14 +33,6 @@
 				</tr>
 				<c:forEach var="tempCars" items="${cars}">
 
-					<%-- 	<c:url var="updateLink" value="/customer/showFormForUpdate">
-					<c:param name="customerId" value="${tempCustomer.id}"></c:param>
-				</c:url>
-				
-				<c:url var="deleteLink" value="/customer/delete">
-					<c:param name="customerId" value="${tempCustomer.id}"></c:param>
-				</c:url> --%>
-
 					<c:url var="updateLink" value="/updatecar">
 						<c:param name="registration" value="${tempCars.regNum}"></c:param>
 					</c:url>

@@ -2,6 +2,8 @@ package com.ado.leasing.service;
 
 import java.util.List;
 import com.ado.leasing.entities.Car;
+import com.ado.leasing.entities.RegisteredCars;
+import com.ado.leasing.entities.User;
 
 public interface CarServiceInterface {
 	
@@ -13,6 +15,6 @@ public interface CarServiceInterface {
 	
 	public void deleteCar(String reg);
 	
-	
+	void leaseCar(RegisteredCars registeredCar);
 
 }

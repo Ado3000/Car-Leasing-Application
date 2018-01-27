@@ -1,18 +1,18 @@
 package com.ado.leasing.dao;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.ado.leasing.entities.User;
 
 @Repository
 public class UserDAO implements UserDAOInterface {
+	
 	
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -32,13 +32,26 @@ public class UserDAO implements UserDAOInterface {
 		currentSession.save(theUser);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public User getUser(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public User getUser(BigInteger id) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		List<User> users = new ArrayList<User>();
+
+		users = currentSession
+			.createQuery("from User where id_number=?")
+			.setParameter(0, id)
+			.list();
+
+		if (users.size() > 0) {
+			return users.get(0);
+		} else {
+			return null;
+		}
 	}
 
 	@Override
+	@SuppressWarnings("rawtypes")
 	public void deleteUser(BigInteger id) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query theQuery = 
@@ -46,5 +59,11 @@ public class UserDAO implements UserDAOInterface {
 		theQuery.setParameter("id", id);
 		theQuery.executeUpdate();
 	}
+	
+//	public void saveUser(User user) {
+//		Session currentSession = sessionFactory.getCurrentSession();
+//	    user.setPassword(passwordEncoder.encode(user.getPassword()));
+//	    currentSession.save(user);
+//	}
 
 }

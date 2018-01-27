@@ -2,8 +2,6 @@ package com.ado.leasing.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -30,6 +28,9 @@ public class Car {
 	
 	@Column(name="registered")
 	private boolean registered;
+	
+	@Column(name="image_url")
+	private String image_url;
 	
 	
 	public String getRegNum() {
@@ -68,7 +69,12 @@ public class Car {
 	public void setRegistered(boolean registered) {
 		this.registered = registered;
 	}
-	
+	public String getImage_url() {
+		return image_url;
+	}
+	public void setImage_url(String image_url) {
+		this.image_url = image_url;
+	}
 	
 	
 

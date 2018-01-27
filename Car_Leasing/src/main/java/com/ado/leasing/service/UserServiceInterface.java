@@ -11,7 +11,7 @@ public interface UserServiceInterface {
 	
 	public void saveUser(User theUser);
 	
-	public User getUser(int id);
+	public User getUser(BigInteger id);
 	
 	public void delelteUser(BigInteger id);
 

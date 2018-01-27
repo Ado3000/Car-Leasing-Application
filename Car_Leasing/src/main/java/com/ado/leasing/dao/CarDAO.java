@@ -1,7 +1,6 @@
 package com.ado.leasing.dao;
 
 import java.util.List;
-
 import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -40,6 +39,7 @@ public class CarDAO implements CarDAOInterface {
 	}
 
 	@Override
+	@SuppressWarnings("rawtypes")
 	public void deleteCar(String reg) {
 	Session currentSession = sessionFactory.getCurrentSession();
 		Query theQuery = 

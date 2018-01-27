@@ -18,8 +18,6 @@
 
 		<div id="content">
 
-			<!-- <input type = "button" value="Add Customer" onclick="window.location.href='showFormForAdd'" class="add-button"/> -->
-
 			<table>
 				<tr>
 					<th>Birth Date</th>

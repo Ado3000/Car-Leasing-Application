@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.ado.leasing.entities.Car;
 import com.ado.leasing.entities.User;
+import com.ado.leasing.entities.UserRole;
 import com.ado.leasing.service.CarServiceInterface;
 import com.ado.leasing.service.UserServiceInterface;
 
@@ -74,7 +75,7 @@ public class AdminController {
 	@GetMapping("/userdelete")
 	public String deleteUser(@RequestParam("id") BigInteger id){
 		userService.delelteUser(id);
-		return "redirect:/user-list";
+		return "redirect:/userlist";
 	}
 
 }
