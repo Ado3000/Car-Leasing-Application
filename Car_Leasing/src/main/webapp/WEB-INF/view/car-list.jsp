@@ -17,9 +17,6 @@
 	<div id="container">
 
 		<div id="content">
-
-			<!-- <input type = "button" value="Add Customer" onclick="window.location.href='showFormForAdd'" class="add-button"/> -->
-
 			<table>
 				<tr>
 					<th>Registration</th>
@@ -51,7 +48,7 @@
 		
 					<td><a href="${updateLink}">Update</a> 
 					| 
-					<a href="${deleteLink}" onclick="if (!(confirm('Are you sure you want to delete this customer'))) return false">Delete</a>
+					<a href="${deleteLink}" onclick="if (!(confirm('Are you sure you want to delete this car'))) return false">Delete</a>
 						</td>
 					</tr>
 				</c:forEach>

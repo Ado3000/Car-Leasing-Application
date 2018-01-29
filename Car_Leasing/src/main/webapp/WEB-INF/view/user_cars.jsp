@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page import ="com.ado.leasing.entities.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -44,7 +45,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 <body>
 
-<h3 style="margin-left:100px;">Car List</h3>
+<h3 style="margin-left:100px;">Leased list</h3>
 <table class="table table-bordered table-striped" style="width:450px; margin-left: 100px;">
     <thead>
         <tr>
@@ -59,11 +60,13 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
     
     <tbody>   
             <c:forEach var="tempCars" items="${cars}">
+            	
             
-            		<c:url var="leaseLink" value="leasecar">
+            		<c:url var="leaseLink" value="showcars">
 						<c:param name="registration" value="${tempCars.regNum}"></c:param>
-						<c:param name="id" value="${tempUsers.id}"></c:param>
 					</c:url>
+		         
+					
 					
 					<tr>
 						<td  style="width:70px;text-align:center;"><img src="${tempCars.image_url}" /></td>

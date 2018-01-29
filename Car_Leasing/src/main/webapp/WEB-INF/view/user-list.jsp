@@ -45,7 +45,7 @@
 						<td>${tempUsers.phoneNumber}</td>
 					
 					<td>
-					<a href="${deleteLink}" onclick="if (!(confirm('Are you sure you want to delete this customer'))) return false">Delete</a>
+					<a href="${deleteLink}" onclick="if (!(confirm('Are you sure you want to delete this user'))) return false">Delete</a>
 						</td>
 					</tr>
 				</c:forEach>

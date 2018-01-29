@@ -43,8 +43,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 <body>
 <h3>Car Leasing!</h3>
 
-
-
 		<a class="btn btn-default" href="${pageContext.request.contextPath}/registrationform">Register</a>
 		<a class="btn btn-default" href="${pageContext.request.contextPath}/welcome">Login</a>
 </body>

@@ -15,9 +15,9 @@ public class RegisteredCars {
 	
 	public RegisteredCars(){}
 	
-	public RegisteredCars(User user, Car car){
+	public RegisteredCars(Car car, boolean registered){
 		this.car = car;
-		this.user = user;
+		registered = true;
 	}
 	
 	public RegisteredCars(User user, Car car, boolean registered){

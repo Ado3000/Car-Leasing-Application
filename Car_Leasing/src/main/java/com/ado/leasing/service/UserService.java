@@ -86,4 +86,11 @@ public class UserService implements UserServiceInterface, UserDetailsService  {
 		return buildUserForAuthentication(user, authorities);
 	}
 
+	@Override
+	@Transactional
+	public void editUser(User theUser) {
+		theUser.setPassword(passwordEncoder.encode(theUser.getPassword()));
+		userDAO.saveUser(theUser);
+	}
+
 }

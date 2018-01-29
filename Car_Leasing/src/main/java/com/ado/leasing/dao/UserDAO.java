@@ -29,7 +29,7 @@ public class UserDAO implements UserDAOInterface {
 	@Override
 	public void saveUser(User theUser) {
 		Session currentSession = sessionFactory.getCurrentSession();
-		currentSession.save(theUser);
+		currentSession.saveOrUpdate(theUser);
 	}
 
 	@SuppressWarnings("unchecked")

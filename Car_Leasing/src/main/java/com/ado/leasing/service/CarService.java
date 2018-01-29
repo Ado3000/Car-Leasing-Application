@@ -1,11 +1,10 @@
 package com.ado.leasing.service;
 
+import java.math.BigInteger;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.ado.leasing.dao.CarDAOInterface;
 import com.ado.leasing.dao.RegisteredCarsDAOInterface;
 import com.ado.leasing.entities.Car;
@@ -24,6 +23,12 @@ public class CarService implements CarServiceInterface {
 	@Transactional
 	public List<Car> getCars() {
 		return carDAO.getCars();
+	}
+	
+	@Override
+	@Transactional
+	public List<Car> notRegisteredCars(){
+		return carDAO.notRegisteredCars();
 	}
 
 	@Override
@@ -49,4 +54,11 @@ public class CarService implements CarServiceInterface {
 	public void leaseCar(RegisteredCars registeredCar){
 		registeredCarDAO.leaseCar(registeredCar);
 	}
+	
+	@Override
+	@Transactional
+	public List<RegisteredCars> getRegisteredCars(){
+		return registeredCarDAO.getRegisteredCars();
+	}
+	
 }

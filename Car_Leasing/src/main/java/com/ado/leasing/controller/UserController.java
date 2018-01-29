@@ -1,6 +1,7 @@
 package com.ado.leasing.controller;
 
 import java.math.BigInteger;
+import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ado.leasing.entities.Car;
 import com.ado.leasing.entities.User;
 import com.ado.leasing.entities.UserRole;
 import com.ado.leasing.service.UserServiceInterface;
@@ -34,11 +36,27 @@ public class UserController {
 		userService.saveUser(theUser);
 		return "redirect:/welcome";
 	}
+	
+	@PostMapping("/editUser")
+	public String editUser(@ModelAttribute("user") User theUser){
+		userService.editUser(theUser);
+		return "redirect:/welcome";
+	}
 
-	@GetMapping("/admindelete")
-	public String deleteUser(@RequestParam("id") BigInteger id){
-		userService.delelteUser(id);
-		return "redirect:/user-list";
+	@GetMapping("/updateuser")
+	public String updateCar(Model theModel, Principal principal) {
+		String id = principal.getName(); //get logged in username
+		User theUser = userService.getUser(new BigInteger(id));
+		theModel.addAttribute("user", theUser);
+		return "edit-form";
+	}
+	
+	@GetMapping("/userInfo")
+	public String userInfo(Model theModel, Principal principal) {
+		String id = principal.getName(); //get logged in username
+		User theUser = userService.getUser(new BigInteger(id));
+		theModel.addAttribute("user", theUser);
+		return "user-info";
 	}
 
 	@RequestMapping("/welcome")

@@ -1,24 +1,12 @@
 <!doctype html>
 
-<html ng-app="AngularSpringApp">
+<html>
 
 <head>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
-	
-	    
-	<script src="C:\Users\Ado\Spring\Car_Leasing\src\main\webapp\WEB-INF\rescources\js\angular\angular.js"></script>
-	<script src="C:\Users\Ado\Spring\Car_Leasing\src\main\webapp\WEB-INF\rescources\js\angular\angular.min.js"></script>
-	<script src="C:\Users\Ado\Spring\Car_Leasing\src\main\webapp\WEB-INF\rescources\js\angular\angular-resource.js"></script>
-	<script src="C:\Users\Ado\Spring\Car_Leasing\src\main\webapp\WEB-INF\rescources\js\angular\angular-resource.min.js"></script>
-	<script src="C:\Users\Ado\Spring\Car_Leasing\src\main\webapp\WEB-INF\rescources\js\angular\angular-loader.js"></script>
-	<script src="C:\Users\Ado\Spring\Car_Leasing\src\main\webapp\WEB-INF\rescources\js\angular\angular-loader.min.js"></script>
-	<script src="C:\Users\Ado\Spring\Car_Leasing\src\main\webapp\WEB-INF\rescources\js\angular\angular-route.js"></script>
-	<script src="C:\Users\Ado\Spring\Car_Leasing\src\main\webapp\WEB-INF\rescources\js\angular\angular-route.min.js"></script>
-	<script src="C:\Users\Ado\Spring\Car_Leasing\src\main\webapp\WEB-INF\rescources\js\app.js"></script>
-	<script src="C:\Users\Ado\Spring\Car_Leasing\src\main\webapp\WEB-INF\rescources\js\CarController.js"></script>   
+	crossorigin="anonymous">  
 
 	<style>
 .btn-default {
@@ -56,11 +44,10 @@
 
 	<div>
 		<a class="btn btn-default" href="cars/listcars">Show Cars</a> 
-		<a class="btn btn-default" href="userlist">Show User Info</a>
+		<a class="btn btn-default" href="userInfo">Show User Info</a>
+		<a class="btn btn-default" href="updateuser">Edit Your Info</a>
+		<a class="btn btn-default" href="cars/showcars">Show leased cars</a>
 	</div>
-	
-    <div ng-view></div>
-
 
 </body>
 </html>

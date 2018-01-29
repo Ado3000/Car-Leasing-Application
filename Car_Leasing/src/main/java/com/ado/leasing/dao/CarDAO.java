@@ -1,11 +1,14 @@
 package com.ado.leasing.dao;
 
+import java.math.BigInteger;
 import java.util.List;
-import org.hibernate.query.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 import com.ado.leasing.entities.Car;
 
 
@@ -19,6 +22,15 @@ public class CarDAO implements CarDAOInterface {
 	public List<Car> getCars() { 
 				Session currentSession = sessionFactory.getCurrentSession();
 				Query<Car> theQuery = currentSession.createQuery("from Car order by reg_num",
+						Car.class);
+				List<Car> cars = theQuery.getResultList();
+				return cars;
+	}
+	
+	@Override
+	public List<Car> notRegisteredCars() { 
+				Session currentSession = sessionFactory.getCurrentSession();
+				Query<Car> theQuery = currentSession.createQuery("from Car where registered = 0",
 						Car.class);
 				List<Car> cars = theQuery.getResultList();
 				return cars;

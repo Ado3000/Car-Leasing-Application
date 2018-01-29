@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Spring Security Example </title>
+        <title> </title>
     </head>
     <body>
     <c:if test="${param.error ne null}">

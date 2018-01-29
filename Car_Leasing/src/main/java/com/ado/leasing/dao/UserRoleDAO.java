@@ -29,7 +29,7 @@ public class UserRoleDAO implements UserRoleDAOInterface {
 	@Override
 	public void saveRole(UserRole role) {
 		Session currentSession = sessionFactory.getCurrentSession();
-		currentSession.save(role);
+		currentSession.saveOrUpdate(role);
 	}
 
 

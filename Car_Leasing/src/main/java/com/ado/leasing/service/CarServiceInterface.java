@@ -1,9 +1,9 @@
 package com.ado.leasing.service;
 
+import java.math.BigInteger;
 import java.util.List;
 import com.ado.leasing.entities.Car;
 import com.ado.leasing.entities.RegisteredCars;
-import com.ado.leasing.entities.User;
 
 public interface CarServiceInterface {
 	
@@ -15,6 +15,10 @@ public interface CarServiceInterface {
 	
 	public void deleteCar(String reg);
 	
+	public List<Car> notRegisteredCars();
+	
 	void leaseCar(RegisteredCars registeredCar);
+	
+	public List<RegisteredCars> getRegisteredCars();
 
 }

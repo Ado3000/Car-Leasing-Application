@@ -1,9 +1,7 @@
 package com.ado.leasing.entities;
 
 import java.math.BigInteger;
-import java.util.HashSet;
 import java.util.Set;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
@@ -11,8 +9,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -37,7 +33,7 @@ public class User {
 		}
 	
 	@Id
-	@Column(name="id_number")
+	@Column(name="id_number")	
 	private BigInteger id;
 	
 	@Column(name="name")

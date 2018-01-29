@@ -2,7 +2,6 @@ package com.ado.leasing.controller;
 
 import java.math.BigInteger;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.ado.leasing.entities.Car;
 import com.ado.leasing.entities.User;
-import com.ado.leasing.entities.UserRole;
 import com.ado.leasing.service.CarServiceInterface;
 import com.ado.leasing.service.UserServiceInterface;
 
