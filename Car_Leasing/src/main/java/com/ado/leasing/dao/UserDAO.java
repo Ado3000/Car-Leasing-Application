@@ -59,11 +59,5 @@ public class UserDAO implements UserDAOInterface {
 		theQuery.setParameter("id", id);
 		theQuery.executeUpdate();
 	}
-	
-//	public void saveUser(User user) {
-//		Session currentSession = sessionFactory.getCurrentSession();
-//	    user.setPassword(passwordEncoder.encode(user.getPassword()));
-//	    currentSession.save(user);
-//	}
 
 }

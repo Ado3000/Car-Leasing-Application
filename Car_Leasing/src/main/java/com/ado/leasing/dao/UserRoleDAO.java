@@ -1,7 +1,6 @@
 package com.ado.leasing.dao;
 
 import java.math.BigInteger;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

@@ -1,6 +1,5 @@
 package com.ado.leasing.dao;
 
-import java.math.BigInteger;
 import java.util.List;
 import com.ado.leasing.entities.Car;
 
